@@ -2,13 +2,9 @@
   [cols]="(umaColuna$ | async) ? 1 : (duasColunas$ | async) ? 2 : 3"
   rowHeight="6em"
 >
-  @for (tile of tiles; track tile) {
-    <mat-grid-tile
-      [colspan]="tile.cols"
-      [rowspan]="tile.rows"
-      [style.background]="tile.color"
-    >
-      {{tile.text}}
+  @for (favorito of favoritos$ | async; track favorito) {
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      {{ favorito.titulo }}
     </mat-grid-tile>
   }
 </mat-grid-list>
