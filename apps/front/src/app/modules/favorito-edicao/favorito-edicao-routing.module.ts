@@ -7,6 +7,13 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: FormFavoritoComponent,
+    data: {
+      id: '',
+    }
+  },
+  {
+    path: 'id',
+    component: FormFavoritoComponent,
   }
 ];
 
