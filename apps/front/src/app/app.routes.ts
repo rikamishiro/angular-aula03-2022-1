@@ -2,6 +2,7 @@ import { Route } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
 import { SobreComponent } from './components/sobre/sobre.component';
+import { FormFavoritoComponent } from './modules/favorito-edicao/components/form-favorito/form-favorito.component';
 
 export const appRoutes: Route[] = [
   {
@@ -16,6 +17,11 @@ export const appRoutes: Route[] = [
   {
     path: 'sobre',
     component: SobreComponent,
+  },
+  {
+    path: 'forms',
+    loadChildren: () => import('./modules/favorito-edicao/favorito-edicao.module',
+    ).then(m => m.FavoritoEdicaoModule),
   },
   {
     path: '',

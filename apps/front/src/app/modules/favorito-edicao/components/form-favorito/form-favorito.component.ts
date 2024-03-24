@@ -14,6 +14,7 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './form-favorito.component.css',
   standalone: true,
   imports: [
+    ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
