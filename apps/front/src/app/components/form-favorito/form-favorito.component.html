@@ -1,0 +1,59 @@
+<form [formGroup]="formGroup" novalidate (ngSubmit)="enviar()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>
+        {{ id ? 'Editar' : 'Novo' }} favorito
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Digite o título" formControlName="titulo">
+            @if (formGroup.controls['titulo'].hasError('required')) {
+              <mat-error>Campo <strong>obrigatório</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Descrição" formControlName="descricao">
+            @if (formGroup.controls['descricao'].hasError('required')) {
+              <mat-error>Campo <strong>obrigatório</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="URL da imagem" formControlName="imagem">
+            @if (formGroup.controls['imagem'].hasError('required')) {
+              <mat-error>Campo <strong>obrigatório</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea matInput placeholder="URL da página" formControlName="url"></textarea>
+            @if (formGroup.controls['url'].hasError('required')) {
+              <mat-error>Campo <strong>obrigatório</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        [disabled]="formGroup.invalid"
+        mat-raised-button
+        color="primary"
+        type="submit"
+      >
+        {{ id ? 'Salvar alterações' : 'Incluir' }}
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>
